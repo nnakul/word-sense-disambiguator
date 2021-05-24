@@ -15,7 +15,7 @@ from nltk.corpus import wordnet as wn
 from gensim.models import KeyedVectors
 
 print('          [ ALL MODULES IMPORTED IN {} SECS ]'.format(round(time()-start_time, 3)))
-print('\n       [ LOADING PRE-TRAINED GOOGLE\'S WORD-2-VEC MODEL ... ]')
+print('\n       [ LOADING GOOGLE\'S PRE-TRAINED WORD-2-VEC MODEL ... ]')
 start_time = time()
 WORD_2_VEC_MODEL = KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin.gz', binary=True, limit=100000)
 print('          [ WORD-2-VEC MODEL LOADED IN {} SECS ]'.format(round(time()-start_time, 3)))
@@ -509,6 +509,9 @@ def GenerateResultTable ( ) :
 print('\n\n\n\t\t +++ WORD SENSE DISAMBIGUATOR +++')
 while True :
     file_path = input('\n\n    ENTER TEXT DOCUMENT PATH : ')
+    if ( file_path.lower() == 'exit' ) :
+        print( "\n       [ CLOSING ... ] " )
+        break
     if ( not LoadText(file_path) ) :
         print( "\n       [ TEXT DOCUMENT COULD NOT BE READ SUCCESFULLY ! ] " )
         continue
