@@ -51,3 +51,4 @@ The problem with sparseness is that all the isolated nodes will get the same sco
         if ( inv_similar1 < inv_similar2 ) : return sense1
         return sense2
 
+To break ties, basically we are comparing the compatibility of the two competitor senses with the ambiguous word in terms of how semantically related is the word with the root-names of the senses. But if the two senses are colexical, it will lead to another tie. In this case, a comparison is made on the basis of how semantically similar are the words in the definitions of the competitor senses to the ambiguous word.
